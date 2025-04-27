@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-items: center;
+}
+
+#container{
+    width: 70vw;
+    height: 1000px;
+    background-color: #f5f5f5;
+    display: grid;
+    grid-template-areas: "aa bb"
+                         "aa bb";
+}
+
+#lado-A{
+    grid-area: aa;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 3vw;
+    
+}
+
+.perfil h1{
+   
+    font-size: 2vw;
+}
+
+#lado-B{
+    grid-area: bb;
+}
+
+.retrato{
+    width: 20vw;
+    clip-path: circle(50%);
+}
+
+.contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.icon{
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+}
+
+.icon i{
+    font-size: 2vw;
+}
