@@ -1,56 +1,140 @@
+@font-face {
+    font-family: "poppins-thin";
+    src: url(./fontes/Poppins/Poppins-Thin.ttf);
+}
+
+@font-face {
+    font-family: "poppins-regular";
+    src: url(./fontes/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url(./fontes/Poppins/Poppins-Light.ttf);
+}
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    justify-items: center;
+    font-family: "Poppins-thin", Helvetica, sans-serif;
 }
 
-#container{
-    width: 70vw;
-    height: 1000px;
-    background-color: #f5f5f5;
-    display: grid;
-    grid-template-areas: "aa bb"
-                         "aa bb";
-}
-
-#lado-A{
-    grid-area: aa;
+.page-scroll{
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 3vw;
+    overflow: hidden;
+    justify-items: center;
+    background-color: #333;
     
 }
 
-.perfil h1{
-   
-    font-size: 2vw;
+#page-container{
+    width: 70vw;
+    height: 1000px;
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+    padding:40px 70px 60px;
+    border-radius: 6vh;
+    background-color: #f5f5f5;
+    display: grid;
+    grid-template-areas:
+                        "header"
+                        "perfil"
+                        "cv"
+                        "exp"
+                        "edu"
+                        "skills"
+                        "atv"
+                        "portifolio";
+
 }
 
-#lado-B{
-    grid-area: bb;
+.header{
+    grid-area: header;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "logo nav";
+
 }
 
-.retrato{
-    width: 20vw;
-    clip-path: circle(50%);
+.logo{
+    grid-area: logo;
 }
 
-.contato{
+
+.nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.perfil{
+grid-area: perfil;
+box-sizing: border-box;
+width: 100%;
+padding:100px;
+display: grid;
+grid-template-areas: "foto section";
+justify-items: center;
+align-content: center;
+}
+
+.foto{
+    grid-area: foto;
+    width: 18vw;
+    height: 18vw;
+    background-image: url(./imagem/retrato.png);
+    background-size: cover;
+    border-radius: 50%;
+    border: 20px solid white;
+    box-shadow: 1px 1px 27px 3px rgba(0,0,0,0.65);
+-webkit-box-shadow: 1px 1px 27px 3px rgba(0,0,0,0.65);
+-moz-box-shadow: 1px 1px 27px 3px rgba(0,0,0,0.65);
+}
+
+.section{
+    grid-area: section;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
-}
-
-.icon{
-    width: 20vw;
-    display: flex;
     justify-content: center;
 }
 
-.icon i{
-    font-size: 2vw;
+.section h3{
+    color: #aaa;
+}
+
+.section h1{
+    font-family: "poppins-regular";
+    font-size: 43px;
+  
+}
+
+.section p{
+    font-family: "poppins";
+}
+
+.cv{
+grid-area: cv;
+}
+
+.exp{
+grid-area: exp;
+}
+
+.edu{
+grid-area: edu;
+}
+
+.skills{
+grid-area: skills;
+}
+
+.atv{
+grid-area: atv;
+}
+
+.portifolio{
+    grid-area: portifolio;
 }
