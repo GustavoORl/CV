@@ -25,8 +25,11 @@
     width: 100%;
     overflow: hidden;
     justify-items: center;
-    /* background-color: #333; */
-    background-image: url(./imagem/image.png);
+    background-color: #0e2f44; 
+    background-image: url(./imagem/fundo\ 2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
     
 }
 
@@ -227,7 +230,6 @@
 
 .portifolio{
     grid-area: portifolio;
-    
 }
 
 .footer {
