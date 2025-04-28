@@ -1,56 +1,53 @@
 @font-face {
     font-family: "poppins-thin";
-    src: url(./fontes/Poppins/Poppins-Thin.ttf);
+    src: url(./fontes/Poppins-Thin.ttf);
 }
 
 @font-face {
     font-family: "poppins-regular";
-    src: url(./fontes/Poppins/Poppins-Regular.ttf);
+    src: url(./fontes/Poppins-Regular.ttf);
 }
 
 @font-face {
     font-family: "poppins";
-    src: url(./fontes/Poppins/Poppins-Light.ttf);
+    src: url(./fontes/Poppins-Light.ttf);
 }
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins-thin", Helvetica, sans-serif;
 }
 
-.page-scroll{
+.page-scroll {
     width: 100%;
     overflow: hidden;
     justify-items: center;
-    background-color: #333;
+    /* background-color: #333; */
+    background-image: url(./imagem/image.png);
     
 }
 
-#page-container{
-    width: 70vw;
-    height: 1000px;
+#page-container {
+    width: 68vw;
     margin-top: 6vh;
-    margin-bottom: 6vh;
-    padding:40px 70px 60px;
-    border-radius: 6vh;
+    padding: 40px 70px 60px;
+    border-radius: 4vh 4vh 0vh 0vh;
     background-color: #f5f5f5;
     display: grid;
     grid-template-areas:
-                        "header"
-                        "perfil"
-                        "cv"
-                        "exp"
-                        "edu"
-                        "skills"
-                        "atv"
-                        "portifolio";
+        "header"
+        "perfil"
+        "learning"
+        "skills"
+        "title-port"
+        "portifolio";
 
 }
 
-.header{
+.header {
     grid-area: header;
     width: 100%;
     display: grid;
@@ -58,29 +55,37 @@
 
 }
 
-.logo{
+.logo {
     grid-area: logo;
 }
 
 
-.nav{
+.nav {
     grid-area: nav;
     display: flex;
     justify-content: space-evenly;
 }
 
-.perfil{
-grid-area: perfil;
-box-sizing: border-box;
-width: 100%;
-padding:100px;
-display: grid;
-grid-template-areas: "foto section";
-justify-items: center;
-align-content: center;
+.perfil {
+    grid-area: perfil;
+    box-sizing: border-box;
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
 }
 
-.foto{
+.main {
+    margin: 50px;
+    display: grid;
+    grid-template-areas: "foto section";
+    justify-items: center;
+    align-content: center;
+}
+
+.foto {
     grid-area: foto;
     width: 18vw;
     height: 18vw;
@@ -88,53 +93,148 @@ align-content: center;
     background-size: cover;
     border-radius: 50%;
     border: 20px solid white;
-    box-shadow: 1px 1px 27px 3px rgba(0,0,0,0.65);
--webkit-box-shadow: 1px 1px 27px 3px rgba(0,0,0,0.65);
--moz-box-shadow: 1px 1px 27px 3px rgba(0,0,0,0.65);
+    box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
+    margin-right: 50px;
 }
 
-.section{
+.section {
     grid-area: section;
     width: 100%;
+    margin-left: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.section h3{
+.section h3 {
     color: #aaa;
+    font-size: 1em;
 }
 
-.section h1{
+.section h1 {
     font-family: "poppins-regular";
-    font-size: 43px;
-  
+    font-size: 44px;
+
 }
 
-.section p{
+.section p {
     font-family: "poppins";
+    color: #665665;
+    font-size: 0.9em;
 }
 
-.cv{
-grid-area: cv;
+.botoes {
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
 }
 
-.exp{
-grid-area: exp;
+.btn {
+    background-color: white;
+    padding: 7px 30px;
+    font-family: "poppins";
+    font-size: 1em;
+    text-align: center;
 }
 
-.edu{
-grid-area: edu;
+.btn-primary {
+    border: 2px solid #333;
+    border-radius: 25px;
 }
 
-.skills{
-grid-area: skills;
+.btn-secondary {
+    border: 2px solid #aaa;
+    border-radius: 25px;
 }
 
-.atv{
-grid-area: atv;
+.btn-primary:hover {
+    background-color: #333;
+    color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #aaa;
+    color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+}
+
+.learning {
+    grid-area: learning;
+}
+
+.skills {
+    grid-area: skills;
+    width: 100%;
+    height: 15vh;
+    display: grid;
+    grid-template-areas: "icon-esq esq icon-dir dir";
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    
+}
+
+.section-esq {
+    grid-area: esq;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section-esq p {
+    font-family: "poppins";
+    font-size: 2em;
+}
+
+.icon-esq{
+    grid-area: icon-esq;
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-evenly;
+    font-size: 3em;
+}
+
+.section-dir p {
+    font-family: "poppins";
+    font-size: 2em;
+}
+
+.section-dir {
+    grid-area: dir;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.icon-dir{
+    grid-area: icon-dir;
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-evenly;
+    font-size: 3em;
+}
+
+.title-port{
+    grid-area: title-port;
 }
 
 .portifolio{
     grid-area: portifolio;
+    
+}
+
+.footer {
+    width: 68vw;
+    background-color: #f5f5f5;
+    margin-bottom: 100px;
+    border-radius: 0vh 0vh 4vh 4vh;
+    border-top: 1px solid #aaa;
+    padding:10px;
 }
