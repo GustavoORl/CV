@@ -44,7 +44,7 @@
         "header"
         "perfil"
         "learning"
-        "skills"
+        "languages"
         "title-port"
         "portifolio";
 
@@ -172,56 +172,20 @@
     grid-area: learning;
 }
 
-.skills {
-    grid-area: skills;
+.languages-container {
+    grid-area: languages;
     width: 100%;
-    height: 15vh;
-    display: grid;
-    grid-template-areas: "icon-esq esq icon-dir dir";
-    grid-template-columns: 1fr 3fr 1fr 3fr;
-    
-}
-
-.section-esq {
-    grid-area: esq;
-    display:flex;
-    flex-direction: column;
+    height: 15vh;  
+    display: flex;
     justify-content: space-evenly;
 }
 
-.section-esq p {
-    font-family: "poppins";
-    font-size: 2em;
-}
-
-.icon-esq{
-    grid-area: icon-esq;
-    display:flex;
+.language-container{
+    display: flex;
     flex-direction: column;
-    align-items: end;
-    justify-content: space-evenly;
-    font-size: 3em;
-}
-
-.section-dir p {
-    font-family: "poppins";
-    font-size: 2em;
-}
-
-.section-dir {
-    grid-area: dir;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.icon-dir{
-    grid-area: icon-dir;
-    display:flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: space-evenly;
-    font-size: 3em;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;    
 }
 
 .title-port{
@@ -230,7 +194,25 @@
 
 .portifolio{
     grid-area: portifolio;
+    width: 100%;
+    height: 31vh;
 }
+
+.img-port{
+    position: relative;
+    right: 0;
+    flex: none;
+    border: 1px solid yellow;
+    background-color: yellow;
+    border-radius: 2px;
+    margin-right: 0.2em;
+    height: 21vh;
+    width: 280px;
+    transition: right 1s ease-out;
+    box-sizing: content-box;
+}
+
+
 
 .footer {
     width: 68vw;
