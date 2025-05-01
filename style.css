@@ -198,18 +198,26 @@
     height: 31vh;
 }
 
+.img-container{
+    display: flex;
+    flex-direction: row;
+}
 .img-port{
-    position: relative;
-    right: 0;
-    flex: none;
-    border: 1px solid yellow;
-    background-color: yellow;
-    border-radius: 2px;
+    border: 2px solid #0e2f44; 
     margin-right: 0.2em;
-    height: 21vh;
-    width: 280px;
-    transition: right 1s ease-out;
-    box-sizing: content-box;
+    width: 380px;
+    height: 220px;
+}
+
+.img-1{
+    background-image: url(./imagem/projeto_contraste.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.img-2{
+    background-image: url(./imagem/projeto_ellen.png);
+    background-size: cover;
 }
 
 
