@@ -21,7 +21,7 @@
     font-family: "Poppins-thin", Helvetica, sans-serif;
 }
 
-a{
+/* a{
     text-decoration: none;
 }
 
@@ -277,4 +277,70 @@ li a:hover{
 
 li{
     list-style: none;
+} */
+
+@media screen and (max-width: 576px){
+
+    #page-container{
+        padding: 50px;
+        overflow: hidden;
+    }
+
+    .header{
+        position:absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 5vh;
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+ 
+
+    .header a{
+        text-decoration: none;
+        color: #333;
+    }
+
+    .perfil{
+        height: 80vh;
+    }
+
+    .main{
+        display: grid;
+        grid-template-areas: "foto"
+                             "section";
+        grid-template-rows: 45% 55%;
+        justify-items: center;
+        align-items: end;
+        height: 100%;
+    }
+
+    .foto{
+        grid-area: foto;
+        background-image: url(../imagem/retrato.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        border: 20px solid white;
+        box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
+        -webkit-box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
+        -moz-box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
+    
+
+    }
+
+    .section{
+        grid-area: section;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
 }
