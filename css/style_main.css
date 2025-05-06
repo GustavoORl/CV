@@ -21,10 +21,10 @@
     font-family: "Poppins-thin", Helvetica, sans-serif;
 }
 
-@media screen and (max-width: 576px){
+@media screen and (max-width: 767px){
 
     #page-container{
-        padding: 50px;
+        padding: 5vw;
         overflow: hidden;
         background-color: #fcfcfc;
     }
@@ -60,7 +60,7 @@
         row-gap: 30px;
         padding-top: 80px;
         justify-items: center;
-        align-items: end;
+        align-items: center;
     }
 
     .foto{
@@ -68,8 +68,8 @@
         background-image: url(../imagem/retrato.png);
         background-size: contain;
         background-repeat: no-repeat;
-        width: 53vw;
-        height: 53vw;
+        width: 60vw;
+        height: 60vw;
         border-radius: 50%;
         border: 20px solid white;
         box-shadow: 1px 1px 27px 3px rgba(0, 0, 0, 0.65);
@@ -83,7 +83,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         
     }
@@ -184,8 +184,8 @@
     .img-port{
         position: relative;
         border: 2px solid #0e2f44; 
-        width: 380px;
-        height: 220px;
+        width: 80vw;
+        height: 40vw;
         border-radius: 20px;
         overflow: hidden; 
         transition: all 0.3s ease;
