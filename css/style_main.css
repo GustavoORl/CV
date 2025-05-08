@@ -173,53 +173,163 @@
         font-size: 1.2em;    
     }
 
-    .img-container{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 15px;
-    }
-    .img-port{
-        position: relative;
-        border: 2px solid #0e2f44; 
+    #slider{
+        margin: 0 auto;
         width: 80vw;
-        height: 40vw;
-        border-radius: 20px;
-        overflow: hidden; 
-        transition: all 0.3s ease;
+        max-width: 100%;
+        text-align: center;
     }
-    
-    .img-port:hover{
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+    #slider input[type=radio] {
+        display: none;
     }
-    
-    .img-port::after {
-        content: '';
-        position: absolute;
+    #slider label{
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #slides{
+        padding: 10px;
+        border: 3px solid #ccc;
+        background: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    #overflow{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #slide1:checked ~ #slides .inner{
+        margin-left: 0;
+    }
+    #slide2:checked ~ #slides .inner{
+        margin-left: -100%;
+    }
+    #slide3:checked ~ #slides .inner{
+        margin-left: -200%;
+    }
+    #slide4:checked ~ #slides .inner{
+        margin-left: -300%;
+    }
+
+    #slides .inner{
+        transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        width: 400%;
+        line-height: 0;
+        height: 30vh;
+    }
+
+    #slides .slide{
+        width: 25%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: #fff;
+    }
+
+    #slides .slide1 {
+        background-image: url(../imagem/projeto_ellen.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .slide a{
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.3);
-        opacity: 1;
-        transition: opacity 0.3s ease;
     }
-    
-    .img-port:hover::after {
-        opacity: 0;
+
+    .slide-content{
+        width: 100%;
+        height: 100%;
     }
-    
-    .img-1{
+
+    #slides .slide2 {
         background-image: url(../imagem/projeto_contraste.png);
         background-size: cover;
         background-position: center;
     }
-    
-    .img-2{
-        background-image: url(../imagem/projeto_ellen.png);
+    #slides .slide3 {
+        background: #222;
         background-size: cover;
     }
+    #slides .slide4 {
+        background: #aaa;
+        background-size: cover;
+    }
+
+   #controls{
+        margin: 0;
+        width: 100%;
+        height: 0px;
+        position: relative;
+        top: -20vh;      
+        
+    }
+
+    #controls label{
+        transition: opacity 0.2s ease-out;
+        display: none;
+        width: 40px;
+        height: 40px;
+        opacity: .4;
+    }
+
+    #controls label:hover{
+        opacity: 1;
+    }
+
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1){
+        background-image: url(../imagem/next.png);
+        background-size: contain;
+        float: right;
+        margin: 0 -40px 0 0;
+        display: block;
+
+    }
+
+    #slide1:checked ~ #controls label:nth-child(4),
+    #slide2:checked ~ #controls label:nth-child(1),
+    #slide3:checked ~ #controls label:nth-child(2),
+    #slide4:checked ~ #controls label:nth-child(3){
+        background: url(../imagem/back.png);
+        background-size: contain;
+        float: left;
+        margin: 0 0 0 -40px;
+        display: block;
+
+    }
+
+    #bullets{
+        margin:0px 0 0;
+        text-align: center;
+
+    }
+
+    #bullets label{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: #ccc;
+        margin: 0 10px;
+    }
+
+    #slide1:checked ~ #bullets label:nth-child(1),
+    #slide2:checked ~ #bullets label:nth-child(2),
+    #slide3:checked ~ #bullets label:nth-child(3),
+    #slide4:checked ~ #bullets label:nth-child(4){
+        background: #444;
+
+    }
+
+   
 
     .footer {
         width: 100%;
@@ -428,54 +538,160 @@
         grid-area: portifolio;
     }
     
-    .img-container{
-        height: 100%;
+    #slider{
+        margin: 0 auto;
+        width: 80vw;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #slider input[type=radio] {
+        display: none;
+    }
+    #slider label{
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #slides{
+        padding: 10px;
+        border: 3px solid #ccc;
+        background: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    #overflow{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #slide1:checked ~ #slides .inner{
+        margin-left: 0;
+    }
+    #slide2:checked ~ #slides .inner{
+        margin-left: -100%;
+    }
+    #slide3:checked ~ #slides .inner{
+        margin-left: -200%;
+    }
+    #slide4:checked ~ #slides .inner{
+        margin-left: -300%;
+    }
+
+    #slides .inner{
+        transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+        width: 400%;
+        line-height: 0;
+        height: 40vh;
+    }
+
+    #slides .slide{
+        width: 25%;
+        float: left;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 15px;
-        padding: 10px 0;
+        height: 100%;
+        color: #fff;
     }
-    .img-port{
-        position: relative;
-        border: 2px solid #0e2f44; 
-        border-radius: 10px;
-        width: 40vw;
-        height: 20vw;
-        overflow: hidden; 
-        transition: all 0.3s ease;
+
+    #slides .slide1 {
+        background-image: url(../imagem/projeto_ellen.png);
+        background-size: cover;
+        background-position: center;
     }
-    
-    .img-port:hover{
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    
-    .img-port::after {
-        content: '';
-        position: absolute;
+
+    .slide a{
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.3);
-        opacity: 1;
-        transition: opacity 0.3s ease;
     }
-    
-    .img-port:hover::after {
-        opacity: 0;
+
+    .slide-content{
+        width: 100%;
+        height: 100%;
     }
-    
-    .img-1{
+
+    #slides .slide2 {
         background-image: url(../imagem/projeto_contraste.png);
         background-size: cover;
         background-position: center;
     }
-    
-    .img-2{
-        background-image: url(../imagem/projeto_ellen.png);
+    #slides .slide3 {
+        background: #222;
         background-size: cover;
+    }
+    #slides .slide4 {
+        background: #aaa;
+        background-size: cover;
+    }
+
+   #controls{
+        margin: 0;
+        width: 100%;
+        height: 0px;
+        position: relative;
+        top: -20vh;      
+        
+    }
+
+    #controls label{
+        transition: opacity 0.2s ease-out;
+        display: none;
+        width: 40px;
+        height: 40px;
+        opacity: .4;
+    }
+
+    #controls label:hover{
+        opacity: 1;
+    }
+
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1){
+        background-image: url(../imagem/next.png);
+        background-size: contain;
+        float: right;
+        margin: 0 -40px 0 0;
+        display: block;
+
+    }
+
+    #slide1:checked ~ #controls label:nth-child(4),
+    #slide2:checked ~ #controls label:nth-child(1),
+    #slide3:checked ~ #controls label:nth-child(2),
+    #slide4:checked ~ #controls label:nth-child(3){
+        background: url(../imagem/back.png);
+        background-size: contain;
+        float: left;
+        margin: 0 0 0 -40px;
+        display: block;
+
+    }
+
+    #bullets{
+        margin:0px 0 0;
+        text-align: center;
+
+    }
+
+    #bullets label{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: #ccc;
+        margin: 0 10px;
+    }
+
+    #slide1:checked ~ #bullets label:nth-child(1),
+    #slide2:checked ~ #bullets label:nth-child(2),
+    #slide3:checked ~ #bullets label:nth-child(3),
+    #slide4:checked ~ #bullets label:nth-child(4){
+        background: #444;
+
     }
     
     
@@ -804,6 +1020,17 @@
         background-image: url(../imagem/projeto_ellen.png);
         background-size: cover;
     }
+
+    .slide a{
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide-content{
+        width: 100%;
+        height: 100%;
+    }
+
     #slides .slide2 {
         background-image: url(../imagem/projeto_contraste.png);
         background-size: cover;
@@ -817,12 +1044,12 @@
         background-size: cover;
     }
 
-    #controls{
-        margin: -250px 0 0 0;
+   #controls{
+        margin: 0;
         width: 100%;
-        height: 50px;
-        z-index: 3;
+        height: 0px;
         position: relative;
+        top: -240px;      
         
     }
 
@@ -863,7 +1090,7 @@
     }
 
     #bullets{
-        margin:250px 0 0;
+        margin:0px 0 0;
         text-align: center;
 
     }
@@ -884,23 +1111,6 @@
         background: #444;
 
     }
-
-    @media screen and (max-width: 900px) {
-    #slide1:checked ~ #controls label:nth-child(2),
-    #slide2:checked ~ #controls label:nth-child(3),
-    #slide3:checked ~ #controls label:nth-child(4),
-    #slide4:checked ~ #controls label:nth-child(1),
-    #slide1:checked ~ #controls label:nth-child(4),
-    #slide2:checked ~ #controls label:nth-child(1),
-    #slide3:checked ~ #controls label:nth-child(2),
-    #slide4:checked ~ #controls label:nth-child(3){
-        margin: 0;
-    }
-    
-        
-    }
-
-
 
     
     .footer {
